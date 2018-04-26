@@ -9,8 +9,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 /**
  * this is test case for spring boot bootstrap initialization
  * added @AutoConfigureTestDatabase to have unique embedded database is used for each test
- * to avoid issues for running schema.sql and data.sql
- * running twice in the same database
+ * to avoid issues for running the db configuration twice on the same database
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest
