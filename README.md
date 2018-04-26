@@ -1,6 +1,8 @@
 # ConfigServiceRest
 Config Service REST api using Spring Boot
 
+Summary:
+
 This is a simple application to demostrate Spring Boot for REST API
 
 Task #1
@@ -15,3 +17,10 @@ The application needs to store the JSON documents in an embedded SQL database (H
 Task #2
 
 Create unit tests for task #1 (controller, service and repository layers).
+
+Build:
+using Gradle build file build.gradle
+build command: ./gradlew clean build
+
+IDE:
+Initial developed with IntelliJ IDEA, but Eclipse or Spring IDE will be fine.
