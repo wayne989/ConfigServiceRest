@@ -26,8 +26,8 @@ IDE:
 
     Initially developed with IntelliJ IDEA, but Eclipse or Spring IDE will be fine.
     
-    Note for IntelliJ:
-    	in order to process annotation for Lambok, please ensure the following setting is configured:
+    Note for IntelliJ Version 2018.1 :
+    	in order to process annotation for Lombok, please ensure the following setting is configured:
     	IntelliJ IDEA -> Preferences -> Build,Excution,Deployment -> Compiler -> Annotation Processors
     		checked - Enable annotation processing
     		selected - Obtain processors from project classpath

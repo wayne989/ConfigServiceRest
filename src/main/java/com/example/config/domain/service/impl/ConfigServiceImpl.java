@@ -5,6 +5,8 @@ import com.example.config.domain.repository.ConfigInfoRepository;
 import com.example.config.domain.repository.entity.ConfigInfoDbo;
 import com.example.config.domain.repository.entity.ConfigInfoPK;
 import com.example.config.domain.service.ConfigService;
+import com.example.config.logging.ConfigServiceLogger;
+import com.example.config.logging.Timed;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -36,6 +38,7 @@ public class ConfigServiceImpl implements ConfigService{
      * @return
      */
     @Override
+    @Timed
     public String findConfigAllByAppCode(String appCode) {
         List<ConfigInfoDbo> configIngoDboList = configInfoRepository.findAllByKeyAppCode(appCode);
         StringBuilder configDetailList = new StringBuilder("{configInfoList: [");
@@ -56,6 +59,7 @@ public class ConfigServiceImpl implements ConfigService{
      * @return
      */
     @Override
+    @Timed
     public String findConfig(String appCode, String version) {
         String configDetail = Constants.EMPTY_JSON;
         ConfigInfoPK key = new ConfigInfoPK(appCode, version);
@@ -74,6 +78,7 @@ public class ConfigServiceImpl implements ConfigService{
      * @return
      */
     @Override
+    @Timed
     public String saveConfig(String appCode, String version, String configDetail) {
 
         String updatedConfigDetail=Constants.EMPTY_JSON;
@@ -100,6 +105,9 @@ public class ConfigServiceImpl implements ConfigService{
         }
         if(updatedConfigInfoDbo!=null){
             updatedConfigDetail = updatedConfigInfoDbo.getConfigDetail();
+        }else{
+            //Fail to update the Config Record
+            ConfigServiceLogger.getErrorLogger().error("error=failed to save config: {}", configDetail);
         }
         return updatedConfigDetail;
     }
