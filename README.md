@@ -17,7 +17,7 @@ Config Service REST api using Spring Boot
     Global Exception Handling - handle web service related exception with returning error in json format
     
     Task #3
-    Centrolize the logging by implementing spring aop which includes performance and error logs.    
+    Centralize the logging by implementing spring aop which includes performance and error logs.    
     
     Task #4 
     Create unit tests for controller, service and repository layers.  This is only for demostration purposes, so the test cases cover most but not all cases
