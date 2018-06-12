@@ -1,7 +1,7 @@
 # ConfigServiceRest
 Config Service REST api using Spring Boot
 
-##Summary:
+## Summary:
 
     This is a simple application to demostrate Spring Boot for REST API
     
@@ -23,12 +23,12 @@ Config Service REST api using Spring Boot
     Create unit tests for controller, service and repository layers.  This is only for demostration purposes, so the test cases cover most but not all cases
 
 
-##Build:
+## Build:
 
     using Gradle build file build.gradle
     build command: ./gradlew clean build
 
-##IDE:
+## IDE:
 
     Initially developed with IntelliJ IDEA, but Eclipse or Spring IDE will be fine.
     
